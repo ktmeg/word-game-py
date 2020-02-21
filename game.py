@@ -25,16 +25,25 @@ class Game:
     # while len(s)>0:
     #     s.remove(random.choice(list(s)))
 
+  def blank_word(self, blanks):
+    # self.blanks = list(self.word)
+    # self.blanks = list('_'*len(self.word))
+    # print(self.blanks)
+    # return self.blanks
+
+  # blanks = list('_'*len(self.word))
+    
   
   
-  def start_guess(self):
+  def start_game(self):
     choice = input (f'Hello, {self.player.name}. Are you ready to play? (y)/(n)')
-    if choice == 'y': self.start_game(self.word)
+    if choice == 'y': 
+      self.show_word_prompt(self.word)
+    return
   
-  def start_game(self, word):
-    print("Game has started the word is:", f"{self.word}")
-    # self.word = print_word
-    # blanks = list('_'*len(self.word))
+  def show_word_prompt(self, word):
+    print("Game has started. Your word is:", f"{self.word}")
+   
   
   def guess_letter(self):
     guess = input('What letter would you like to guess?')
@@ -55,7 +64,7 @@ class Player:
     return f'{self.name}'
   
 game = Game()
-# game.play()
+game.start_game()
 
 
 
