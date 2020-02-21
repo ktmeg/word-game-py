@@ -13,6 +13,7 @@ class Game:
   def __init__(self):
     self.player = Player('player1')
     self.word = self.choose_word()
+    self.blanks = self.blank_word(self.word)
 
   def choose_word(self):
     with open('words.txt', 'r') as f:
@@ -27,9 +28,10 @@ class Game:
 
   def blank_word(self, blanks):
     # self.blanks = list(self.word)
-    # self.blanks = list('_'*len(self.word))
-    # print(self.blanks)
-    # return self.blanks
+    # self.word.strip()
+    self.blanks = list('_'*len(self.word.strip()))
+    print(self.blanks)
+    return self.blanks
 
   # blanks = list('_'*len(self.word))
     
@@ -42,7 +44,7 @@ class Game:
     return
   
   def show_word_prompt(self, word):
-    print("Game has started. Your word is:", f"{self.word}")
+    print("Game has started. Your word is:", f"{self.blank_word}")
    
   
   def guess_letter(self):
