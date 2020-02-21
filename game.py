@@ -13,7 +13,7 @@ class Game:
   def __init__(self):
     self.player = Player('player1')
     self.word = self.choose_word()
-    self.blanks = self.blank_word(self.word)
+    self.blanks = self.start_game(self.word)
 
   def choose_word(self):
     with open('words.txt', 'r') as f:
@@ -26,25 +26,23 @@ class Game:
     # while len(s)>0:
     #     s.remove(random.choice(list(s)))
 
-  def blank_word(self, blanks):
-    # self.blanks = list(self.word)
-    # self.word.strip()
-    self.blanks = list('_'*len(self.word.strip()))
-    print(self.blanks)
-    return self.blanks
-
-  # blanks = list('_'*len(self.word))
+  # def blank_word(self, blanks):
+  #   self.blanks = list('_'*len(self.word.strip()))
+  #   # print(self.blanks)
+  #   # return "Game has started. Your word is:", f"{self.blanks}"
+  #   return
+  
+  def start_game(self, blanks):
+    choice = input (f'Hello, {self.player.name}. Are you ready to play? (y)/(n)')
+    if choice == 'y': 
+      self.blanks = list('_'*len(self.word.strip()))
+      print(self.blanks)
+      return "Game has started. Your word is:", f"{self.blanks}"
     
   
   
-  def start_game(self):
-    choice = input (f'Hello, {self.player.name}. Are you ready to play? (y)/(n)')
-    if choice == 'y': 
-      self.show_word_prompt(self.word)
-    return
-  
-  def show_word_prompt(self, word):
-    print("Game has started. Your word is:", f"{self.blank_word}")
+  # def show_word_prompt(self, word):
+  #   print("Game has started. Your word is:", f"{blank_word}")
    
   
   def guess_letter(self):
@@ -67,6 +65,7 @@ class Player:
   
 game = Game()
 game.start_game()
+
 
 
 
