@@ -29,7 +29,7 @@ class Game:
       print('See you later...')
       return choice 
         
-  def guess(self, guess):
+  def guesses(self, guess):
     self.guess = guess
     choice = input('What letter would you like to guess?')
     # if choice == len(letter) > 1:
@@ -51,11 +51,11 @@ class Game:
           print("Game Over!")
         return "".join(self.blanks)    
 
-  def guesses_left(self):
-    self.guesses_left = 8 
-    self.guesses_left -= 1
-    if self.guesses_left < 0:
-      return ("Game Over!")
+  # def guesses_left(self):
+  #   self.guesses_left = 8 
+  #   self.guesses_left -= 1
+  #   if self.guesses_left < 0:
+  #     return ("Game Over!")
 
 
 class Player:
@@ -70,8 +70,9 @@ class Player:
   
 game = Game()
 game.start_game()
-game.reveal_letters()
-game.guess()
+# game.guesses(self.guess)
+# game.reveal_letters()
+
 
 
 
