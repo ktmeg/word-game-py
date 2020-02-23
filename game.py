@@ -7,6 +7,7 @@ class Game:
     self.player = Player('Player1')
     # self.blanks = self.start_game()
     self.word = self.choose_word()
+    self.guesses_left = 8
     
 
   def choose_word(self):
@@ -29,9 +30,8 @@ class Game:
       print('See you later...')
       return choice 
         
-  def guesses(self, guess):
-    self.guess = guess
-    choice = input('What letter would you like to guess?')
+  def guesses(self):
+    choice == input('What letter would you like to guess?')
     # if choice == len(letter) > 1:
     #   print ('Please choose one letter!')
     return choice
@@ -70,7 +70,7 @@ class Player:
   
 game = Game()
 game.start_game()
-# game.guesses(self.guess)
+game.guesses()
 # game.reveal_letters()
 
 
