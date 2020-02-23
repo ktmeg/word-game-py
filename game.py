@@ -29,15 +29,17 @@ class Game:
     elif choice == 'n':
       print('See you later...')
       return choice 
+  # needs to stop running function is answer is 'n'
         
   def guesses(self):
-    choice == input('What letter would you like to guess?')
-    # if choice == len(letter) > 1:
-    #   print ('Please choose one letter!')
-    return choice
+    choice = input('What letter would you like to guess?')
+    user_guess = self.choice()
+    if choice == len(user_guess) > 1:
+      print ('Please choose one letter!')
+    return user_guess
 
   def reveal_letters(self, letter):
-    self.letter = letter
+    self.guesses()
     if letter in self.blanks:
       while letter in self.blanks:
         i = self.blanks.index(letter)
