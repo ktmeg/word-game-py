@@ -7,7 +7,7 @@ class Game:
     self.player = Player('Player1')
     # self.blanks = self.start_game()
     self.word = self.choose_word()
-    self.guesses_left = 8
+    # self.guesses_left = 8
     
 
   def choose_word(self):
@@ -30,7 +30,11 @@ class Game:
       print('See you later...')
       return choice 
   # needs to stop running function is answer is 'n'
-        
+
+  def play_game(self):
+    while self.guesses_left < 8 and not len("".join(self.blanks)) == 0:
+      self.guesses()
+      
   def guesses(self):
     choice = input('What letter would you like to guess?')
     user_guess = self.choice()
@@ -52,12 +56,6 @@ class Game:
         if self.guesses_left < 0:
           print("Game Over!")
         return "".join(self.blanks)    
-
-  # def guesses_left(self):
-  #   self.guesses_left = 8 
-  #   self.guesses_left -= 1
-  #   if self.guesses_left < 0:
-  #     return ("Game Over!")
 
 
 class Player:
